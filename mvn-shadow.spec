@@ -4,11 +4,13 @@
 #
 Name     : mvn-shadow
 Version  : 4.0.3
-Release  : 1
+Release  : 2
 URL      : https://github.com/johnrengelman/shadow/archive/4.0.3.tar.gz
 Source0  : https://github.com/johnrengelman/shadow/archive/4.0.3.tar.gz
 Source1  : https://repo.gradle.org/gradle/libs-releases/com/github/jengelman/gradle/plugins/shadow/4.0.3/shadow-4.0.3.jar
 Source2  : https://repo.gradle.org/gradle/libs-releases/com/github/jengelman/gradle/plugins/shadow/4.0.3/shadow-4.0.3.pom
+Source3  : https://repo.gradle.org/gradle/libs-releases/com/github/jengelman/gradle/plugins/shadow/4.0.4/shadow-4.0.4.jar
+Source4  : https://repo.gradle.org/gradle/libs-releases/com/github/jengelman/gradle/plugins/shadow/4.0.4/shadow-4.0.4.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -45,11 +47,18 @@ license components for the mvn-shadow package.
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/mvn-shadow
 cp LICENSE %{buildroot}/usr/share/package-licenses/mvn-shadow/LICENSE
+cp NOTICE %{buildroot}/usr/share/package-licenses/mvn-shadow/NOTICE
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/github/jengelman/gradle/plugins/shadow/4.0.3
 cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/github/jengelman/gradle/plugins/shadow/4.0.3/shadow-4.0.3.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/github/jengelman/gradle/plugins/shadow/4.0.3
 cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/github/jengelman/gradle/plugins/shadow/4.0.3/shadow-4.0.3.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/github/jengelman/gradle/plugins/shadow/4.0.4
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/github/jengelman/gradle/plugins/shadow/4.0.4/shadow-4.0.4.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/github/jengelman/gradle/plugins/shadow/4.0.4
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/github/jengelman/gradle/plugins/shadow/4.0.4/shadow-4.0.4.pom
 
 
 %files
@@ -59,7 +68,10 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/github/jengelman/gr
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/com/github/jengelman/gradle/plugins/shadow/4.0.3/shadow-4.0.3.jar
 /usr/share/java/.m2/repository/com/github/jengelman/gradle/plugins/shadow/4.0.3/shadow-4.0.3.pom
+/usr/share/java/.m2/repository/com/github/jengelman/gradle/plugins/shadow/4.0.4/shadow-4.0.4.jar
+/usr/share/java/.m2/repository/com/github/jengelman/gradle/plugins/shadow/4.0.4/shadow-4.0.4.pom
 
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/mvn-shadow/LICENSE
+/usr/share/package-licenses/mvn-shadow/NOTICE
